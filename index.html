@@ -611,9 +611,6 @@ function setAnswer(id, val) {
   answers[id] = val;
   // re-render so showIf fields appear/disappear immediately
   renderSection();
-  // scroll to field that was just interacted with
-  const el = document.getElementById('block-'+id);
-  if (el) el.scrollIntoView({behavior:'smooth', block:'nearest'});
 }
 
 function toggleMulti(id, val) {
