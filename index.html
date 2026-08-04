@@ -221,17 +221,7 @@ body { background: var(--cream); color: var(--ink); font-family: var(--sans); fo
 .btn-restart { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); padding: 10px 22px; border-radius: 999px; cursor: pointer; font-family: var(--sans); font-size: 13px; transition: all .15s; }
 .btn-restart:hover { background: rgba(255,255,255,0.18); }
 
-/* Researcher access button */
-#researcher-btn {
-  position: fixed; bottom: 16px; right: 16px; z-index: 200;
-  background: rgba(26,35,56,0.9); color: rgba(255,255,255,0.6);
-  border: 1px solid rgba(255,255,255,0.15); border-radius: 999px;
-  padding: 8px 16px; font-size: 11px; cursor: pointer; font-family: var(--sans);
-  backdrop-filter: blur(8px); transition: opacity .2s;
-}
-#researcher-btn:hover { opacity: 1; color: #fff; }
-
-/* Fade in animation */
+  /* Fade in animation */
 @keyframes fadeUp { from { opacity:0; transform: translateY(16px); } to { opacity:1; transform:none; } }
 .fade-up { animation: fadeUp .7s cubic-bezier(.22,.61,.36,1) both; }
 </style>
@@ -319,8 +309,6 @@ body { background: var(--cream); color: var(--ink); font-family: var(--sans); fo
     <button class="btn-restart" onclick="restartSurvey()">Submit another response</button>
   </div>
 </section>
-
-<button id="researcher-btn" onclick="window.open('REPLACE_WITH_YOUR_SHEET_URL','_blank')">Researcher Access →</button>
 
 <script>
 // ══════════════════════════════════════════════════════════════
@@ -591,8 +579,7 @@ function renderSection() {
     html += `<div class="field-error" id="err-${f.id}">This field is required.</div></div>`;
   });
 
-  body.innerHTML = html;
-  window.scrollTo({top:0, behavior:'smooth'});
+body.innerHTML = html; // Do NOT auto-scroll when re-rendering answers. This prevents the // page jumping up after every answer. (Only scroll on user navigation // if you explicitly want to.) // window.scrollTo({top:0, behavior:'smooth'});
 }
 
 function updateVillage() {
