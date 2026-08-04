@@ -668,18 +668,35 @@ function startSurvey() {
 
 function goNext() {
 
-    saveAnswers();
+  if (!validateStep()) return;
 
-    currentSection++;
+  saveAnswers();
 
+  if (currentStep < SECTIONS.length - 1) {
+    currentStep++;
     renderSection();
 
-    window.scrollTo(0,0);
+    // Jump to the top of the page without smooth scrolling
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto"
+    });
+  }
 
 }
 
 function goBack() {
-  if (currentStep > 0) { currentStep--; renderSection(); }
+  if (currentStep > 0) {
+    currentStep--;
+    renderSection();
+
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "auto"
+    });
+  }
 }
 
 // ══════════════════════════════════════════════════════════════
