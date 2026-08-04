@@ -31,11 +31,9 @@ body { background: var(--cream); color: var(--ink); font-family: var(--sans); fo
   min-height: 100vh;
 background: linear-gradient(
 135deg,
-#FFF8F0 0%,
-#F6E7D4 35%,
-#E8C8A6 70%,
-#D2A679 100%
-);
+#6F4525,
+#9E6337,
+#B97843);
   display: flex; flex-direction: column; align-items: center; justify-content: center;
   padding: 40px 24px; text-align: center; position: relative; overflow: hidden;
 }
@@ -68,7 +66,7 @@ background: linear-gradient(
 }
 .cover-uni { font-family: var(--serif); font-size: 20px; color: #fff; margin-bottom: 2px; }
 .cover-dept { font-size: 12px; color: rgba(255,255,255,0.5); margin-bottom: 28px; }
-.cover-title { font-family: var(--serif); font-size: clamp(26px,5vw,42px); font-weight: 700; color: #fff; line-height: 1.2; margin-bottom: 10px; }
+.cover-title { font-family: var(--serif); font-size: clamp(26px,5vw,42px); font-weight: 700; color: #3F2815; line-height: 1.2; margin-bottom: 10px; }
 .cover-sub { font-family: var(--serif); font-style: italic; font-size: 17px; color: rgba(255,255,255,0.7); margin-bottom: 6px; }
 .cover-meta { font-size: 12px; color: rgba(255,255,255,0.45); margin-bottom: 32px; }
 
@@ -85,16 +83,17 @@ background: linear-gradient(
 }
 .cover-card p {
   font-size: 13px;
-  color: #5F4B32;
+  color: #3E3125;
   line-height: 1.7;
   margin-bottom: 12px;
 }
 .cover-author { display: flex; flex-wrap: wrap; gap: 10px; align-items: center; font-size: 12px; }
 .cover-author strong {
-  color: #5A3B1E;
+color: #2F1D0E;
+font-weight:700;
 }
 .cover-author span {
-  color: #8B7355;
+  color: #5D4939;
 }
 
 .cover-chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-bottom: 32px; }
@@ -106,9 +105,9 @@ background: linear-gradient(
   font-weight: 600;
   padding: 8px 16px;
   border-radius: 999px;
-  background: #F7EFE4;
-  border: 1px solid #D8BC96;
-  color: #6A4A2A;
+  background:#E9D4BA;
+  border:1px solid #B98D60;
+  color:#3B2716;
   box-shadow: 0 3px 8px rgba(0,0,0,0.08);
   transition: all .2s ease;
 }
@@ -129,7 +128,11 @@ background: linear-gradient(
   align-items: center;
   gap: 12px;
 
-  background: linear-gradient(135deg, #A66B3D 0%, #C98B55 50%, #D9A66C 100%);
+background: linear-gradient(
+135deg,
+#6F4525,
+#9E6337,
+#B97843);
   color: #ffffff;
 
   border: none;
@@ -149,7 +152,11 @@ background: linear-gradient(
 
 .btn-begin:hover {
   transform: translateY(-3px);
-  background: linear-gradient(135deg, #8C5A31 0%, #B97944 50%, #C98B55 100%);
+  background: linear-gradient(
+135deg,
+#6F4525,
+#9E6337,
+#B97843);
   box-shadow: 0 14px 36px rgba(166,107,61,.40);
 }
 
@@ -284,22 +291,20 @@ background: linear-gradient(
 /* Thank you */
 #thankyou {
   display: none; min-height: 100vh; align-items: center; justify-content: center;
-background: linear-gradient(
+background:linear-gradient(
 135deg,
-#FFF8F0 0%,
-#F6E7D4 35%,
-#E8C8A6 70%,
-#D2A679 100%
-);
+#F3E3CF 0%,
+#E8C8A6 45%,
+#D6AE82 100%);
   padding: 40px 24px; text-align: center;
 }
 .ty-card {
   max-width: 440px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.15);
   border-radius: 20px; padding: 48px 36px;
 }
-.ty-icon { font-size: 48px; margin-bottom: 16px; }
+.ty-icon { font-size: 48px; margin-bottom: 16px; color:#3A2717; }
 .ty-card h2 { font-family: var(--serif); font-size: 32px; color: #fff; margin-bottom: 10px; }
-.ty-card p { font-size: 14px; color: rgba(255,255,255,0.6); line-height: 1.7; margin-bottom: 20px; }
+.ty-card p { font-size: 14px; color:#5A4737; line-height: 1.7; margin-bottom: 20px; }
 .ty-id { font-size: 11px; font-family: monospace; color: rgba(255,255,255,0.3); background: rgba(255,255,255,0.06); border-radius: 8px; padding: 8px 14px; margin-bottom: 24px; }
 .btn-restart { background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.7); padding: 10px 22px; border-radius: 999px; cursor: pointer; font-family: var(--sans); font-size: 13px; transition: all .15s; }
 .btn-restart:hover { background: rgba(255,255,255,0.18); }
