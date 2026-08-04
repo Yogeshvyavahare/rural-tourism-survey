@@ -350,10 +350,20 @@ const SECTIONS = [
   id:"A", title:"Socio-Demographic Information",
   intro:"Please share a few basic details about yourself and your household.",
   fields:[
-    {id:"district",  type:"select",  label:"District", options:Object.keys(DISTRICTS).concat(["Other"]), required:true},
-    {id:"district_other", type:"text", label:"If Other — please specify district", showIf:{field:"district",val:"Other"}, optional:true},
-    {id:"village",   type:"select",  label:"Village / Tourism Destination", dynamicOptions:true, required:true},
-    {id:"village_other", type:"text", label:"If Other — please specify village", showIf:{field:"village",val:"Other"}, optional:true},
+{
+    id:"district",
+    type:"select",
+    label:"District",
+    options:Object.keys(DISTRICTS),
+    required:true
+},
+{
+    id:"village",
+    type:"select",
+    label:"Village / Tourism Destination",
+    dynamicOptions:true,
+    required:true
+},
     {id:"A1", type:"single", label:"A1. Age group (in years)", options:["18–26","27–45","46–60","Above 60"], required:true},
     {id:"A2", type:"single", label:"A2. Gender", options:["Male","Female","Other / Prefer not to say"], required:true},
     {id:"A3", type:"single", label:"A3. Educational Level", options:["No Formal Education","Primary (1st-5th)","Secondary (6th-10th)","Higher Secondary (11th-12th)","Diploma / ITI","Graduate","Postgraduate & Above"], required:true},
