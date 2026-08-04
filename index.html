@@ -651,9 +651,16 @@ function validateStep() {
     }
     if (empty) { block.classList.add('has-error'); valid = false; }
   });
-  if (!valid) {
-    const first = document.querySelector('.has-error');
+if (!valid) {
+  const first = document.querySelector('.has-error');
+  if (first) {
+    window.scrollTo({
+      top: first.offsetTop - 20,
+      left: 0,
+      behavior: "auto"
+    });
   }
+}
   return valid;
 }
 
@@ -670,8 +677,6 @@ function goNext() {
 
   if (!validateStep()) return;
 
-  saveAnswers();
-
   if (currentStep < SECTIONS.length - 1) {
     currentStep++;
     renderSection();
@@ -682,6 +687,7 @@ function goNext() {
       behavior: "auto"
     });
   }
+
 }
 
 function goBack() {
