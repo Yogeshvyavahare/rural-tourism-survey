@@ -676,14 +676,12 @@ function goNext() {
     currentStep++;
     renderSection();
 
-    // Jump to the top of the page without smooth scrolling
     window.scrollTo({
       top: 0,
       left: 0,
       behavior: "auto"
     });
   }
-
 }
 
 function goBack() {
