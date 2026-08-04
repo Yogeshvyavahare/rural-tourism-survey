@@ -552,8 +552,8 @@ function renderSection() {
     }
     if (f.type === 'select') {
       let opts = f.dynamicOptions
-        ? (DISTRICTS[answers.district] || []).concat(['Other'])
-        : (f.options || []);
+  ? (DISTRICTS[answers.district] || [])
+  : (f.options || []);
       const disabled = f.dynamicOptions && !answers.district;
       html += `<select class="field-select" id="${f.id}" onchange="setAnswer('${f.id}',this.value)${f.id==='district'?';updateVillage()':''}" ${disabled?'disabled':''}>
         <option value=""${!answers[f.id]?' selected':''}>-- Select --</option>
@@ -594,9 +594,14 @@ body.innerHTML = html; // Do NOT auto-scroll when re-rendering answers. This pre
 function updateVillage() {
   const sel = document.getElementById('village');
   if (!sel) return;
-  const opts = (DISTRICTS[answers.district]||[]).concat(['Other']);
+
+  const opts = DISTRICTS[answers.district] || [];
+
   sel.disabled = false;
-  sel.innerHTML = '<option value="">-- Select --</option>' + opts.map(o=>`<option value="${o}">${o}</option>`).join('');
+  sel.innerHTML =
+    '<option value="">-- Select --</option>' +
+    opts.map(o => `<option value="${o}">${o}</option>`).join('');
+
   answers.village = '';
 }
 
